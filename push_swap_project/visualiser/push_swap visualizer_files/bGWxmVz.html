@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://cdpn.io/ahkoh/fullpage/bGWxmVz?anon=true&view= -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+    <script src="./stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>CodePen - push_swap visualizer</title>
+
+    <link rel="canonical" href="https://codepen.io/ahkoh/pen/bGWxmVz">
+  
+  
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  
+<style>
+:root {--height: 1px; --gap: 0px}
+
+div.col {
+  padding: 10px;
+  box-sizing: border-box;
+  float: left;
+  width: 50%; 
+  border-bottom: 1px solid teal;
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  border-top: var(--height) solid teal;
+  height: var(--gap);
+  display: block;
+  overflow: hidden;
+}
+
+li {
+  animation: blinker 1s linear;
+}
+
+@keyframes blinker {
+  0% { border-color: green; }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no" class="" style="">
+  <div class="container-fluid">
+  <form class="row row-cols-lg-auto g-3 align-items-center mt-0">
+    <div class="col-auto">
+      <div class="form-floating">
+        <input class="form-control" id="a" placeholder="numbers" title="paste your unsorted input here" value="321 534 317 199 580 678 436 363 586 125 186 660 503 8 476 316 146 7 625 393 502 422 198 628 174 460 658 662 516 222 340 408 633 484 653 172 634 465 13 638 311 291 637 491 588 135 294 276 389 354 346 255 188 564 526 469 601 645 195 115 485 202 176 589 292 413 630 375 507 565 447 570 253 359 498 286 129 18 677 452 237 285 631 138 270 692 91 22 364 264 240 505 676 66 298 179 401 550 5 416 576 423 263 249 355 532 35 557 323 391 19 618 599 68 203 537 544 467 510 192 546 163 500 339 591 656 496 461 101 2 472 685 400 53 529 273 289 180 380 78 548 497 670 657 200 59 441 111 621 524 499 64 183 665 191 275 592 137 597 3 92 161 238 464 67 218 639 106 696 451 327 248 60 535 488 605 312 650 17 455 194 155 290 602 649 76 258 306 55 189 36 466 127 94 313 473 385 552 421 88 103 494 481 151 152 293 288 566 80 456 331 395 453 349 387 213 555 326 21 458 371 583 119 120 335 235 462 89 635 431 33 72 24 521 246 173 262 370 268 367 616 506 444 82 57 475 1 329 11 675 435 208 689 304 655 632 397 328 556 572 114 527 279 181 162 205 169 419 553 663 517 153 593 322 680 559 596 6 661 366 372 54 578 109 690 164 540 226 99 39 636 123 405 282 171 61 52 424 182 95 533 624 611 437 590 234 666 392 609 377 541 197 224 217 216 160 672 386 257 428 274 243 513 297 471 353 113 32 228 438 236 25 229 271 429 73 344 448 71 86 654 75 412 579 31 562 446 569 239 612 300 442 427 686 147 190 124 166 361 433 479 626 81 457 145 508 105 403 357 122 398 12 42 518 454 607 58 133 683 38 410 694 450 643 90 406 43 10 509 156 85 542 272 148 175 159 62 223 41 241 168 396 79 100 482 74 116 242 47 269 144 118 622 30 409 324 531 252 209 688 318 232 63 627 207 483 332 463 402 671 215 204 110 256 330 519 23 420 432 470 610 682 459 360 687 233 425 132 277 245 615 165 210 651 149 140 430 384 37 34 14 558 49 567 418 178 244 27 310 644 646 325 693 388 698 585 167 334 187 573 220 314 128 551 214 568 695 305 623 536 352 543 9 69 221 301 108 659 575 157 480 381 295 489 16 266 185 351 667 382 495 337 98 647 302 87 280 549 399 523 40 184 520 130 338 642 525 563 594 700 230 604 545 196 641 107 684 158 598 44 434 283 15 414 308 691 299 376 356 315 265 390 603 606 267 407 26 350 679 250 141 134 136 522 56 150 97 29 478 379 319 443 201 46 600 417 206 177 512 70 93 378 561 225 287 278 170 619 582 260 620 373 296 131 83 439 411 501 547 261 247 539 486 614 669 640 468 336 415 474 126 342 365 487 571 404 348 259 374 51 104 674 121 584 613 504 648 369 664 45 48 538 668 587 309 347 333 530 673 251 4 320 617 681 697 577 426 490 341 231 345 211 368 102 154 142 515 449 227 477 28 307 652 84 112 394 574 343 493 193 383 284 254 511 212 581 96 281 77 143 608 219 492 50 528 560 629 514 445 440 362 554 117 699 358 20 303 595 65 139">
+        <label>Unsorted Numbers</label>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="form-floating">
+        <input class="form-control" title="paste your sorting steps here. multiline supported, no need convert space to newline" id="b" placeholder="paste sorting steps here separated by newline/space" value="pb ra pb pb ra ra ra ra ra pb pb ra ra pb ra pb pb pb ra ra ra ra pb ra pb ra ra ra ra pb pb ra ra ra ra pb ra ra pb ra pb pb ra ra ra pb pb pb ra ra pb pb pb ra ra ra ra ra pb pb ra pb pb ra pb ra ra ra ra ra ra ra pb ra ra pb pb pb ra ra pb pb ra pb pb ra pb pb ra pb pb ra ra pb pb pb ra ra pb ra ra ra pb pb ra ra pb ra pb ra pb ra ra pb pb ra ra ra ra pb ra pb ra pb ra ra ra ra pb pb ra ra ra pb ra pb pb pb ra pb ra ra ra ra pb pb ra pb ra ra ra pb pb ra pb pb ra pb ra pb pb pb pb ra pb pb ra pb ra ra pb pb pb ra ra ra pb ra pb ra pb pb pb ra ra pb pb pb pb pb pb ra pb pb pb ra ra ra ra pb pb ra ra pb pb pb pb ra pb ra pb ra ra pb ra pb ra pb pb ra ra ra pb pb pb pb ra pb ra ra pb pb pb ra pb pb pb ra pb ra ra ra ra pb pb ra pb pb pb ra ra pb ra pb ra ra ra pb ra ra pb ra pb pb pb pb pb ra ra ra ra pb ra pb ra ra ra pb ra ra ra pb ra pb ra pb ra pb pb pb ra pb ra pb pb pb pb ra pb pb ra ra ra ra ra pb ra ra ra ra ra pb pb pb pb pb ra ra pb ra pb pb ra pb ra ra pb pb pb ra pb pb pb pb ra pb pb ra pb pb ra pb ra ra pb ra ra ra pb ra pb ra ra ra pb pb pb pb ra ra ra ra pb ra pb ra pb ra ra pb ra pb pb ra ra ra pb pb ra pb ra ra ra ra pb ra pb pb ra pb pb ra pb pb pb pb pb pb pb pb pb ra pb pb ra pb pb pb pb pb pb pb ra pb ra pb ra pb pb ra pb pb pb ra pb ra pb ra ra ra pb pb pb pb pb ra pb ra ra ra ra ra ra ra ra pb ra pb pb pb ra pb pb ra pb pb ra ra pb pb pb ra pb ra ra pb pb pb pb ra ra pb ra ra ra ra pb pb pb ra pb pb pb ra pb ra ra pb ra ra ra ra pb pb pb pb pb ra ra pb ra ra pb ra pb pb pb ra ra ra ra pb pb ra pb pb pb ra ra ra pb pb ra pb pb ra ra ra ra ra pb ra ra pb ra pb ra pb ra pb ra pb pb ra pb ra pb ra ra pb pb ra ra ra pb ra pb ra ra pb pb pb pb ra pb pb pb pb ra ra pb ra pb pb ra ra pb pb ra pb pb ra ra pb pb pb pb ra ra pb ra ra pb pb pb ra ra ra ra pb pb ra ra ra ra ra ra pb ra ra pb pb ra ra ra ra pb pb ra pb pb ra pb ra ra ra ra ra ra pb pb ra ra ra pb pb pb ra ra pb pb pb ra ra ra ra ra ra pb pb pb pb ra pb pb pb ra ra pb ra pb pb ra pb pb ra ra pb ra pb ra pb pb ra pb ra pb pb pb pb ra pb ra pb ra ra ra ra ra ra ra ra pb ra ra pb pb ra pb pb ra ra ra pb pb ra ra pb pb ra pb pb pb ra pb ra ra pb pb ra pb ra ra pb ra ra pb ra pb pb ra ra pb ra ra pb ra pb ra pb pb ra pb ra pb pb ra pb ra ra pb pb ra pb ra pb ra pb pb ra ra pb ra ra ra ra pb pb ra pb ra ra pb pb pb ra pb ra pb ra pb ra ra pb ra pb pb ra ra ra pb ra ra pb ra pb ra ra pb ra ra pb pb pb ra pb pb pb ra pb pb pb pb ra pb pb ra pb ra pb pb pb pb ra pb pb pb ra pb ra ra ra pb ra ra ra pb ra ra pb ra ra ra ra ra pb pb ra ra ra ra pb pb ra ra ra pb ra ra pb ra pb ra ra pb pb pb pb pb pb pb pb ra pb ra ra pb ra ra pb pb ra pb pb pb ra pb pb pb pb pb pb pb ra ra pb ra pb ra pb pb ra pb pb ra pb ra ra ra pb pb pb ra pb pb pb pb ra ra pb pb ra pb ra ra pb pb ra ra pb ra ra ra pb ra ra ra ra ra ra ra ra pb ra ra ra pb pb pb pb ra pb pb ra ra pb pb pb ra ra ra ra ra ra ra ra ra ra pb pb ra pb pb pb ra ra pb pb ra pb pb pb pb ra pb pb pb ra ra ra ra pb pb pb pb ra ra pb ra ra ra pb pb pb pb pb ra pb pb ra ra ra pb ra pb ra ra ra ra ra ra ra ra ra ra pb pb pb pb pb pb ra pb ra pb pb pb ra ra pb ra ra ra pb pb pb pb ra ra pb ra pb pb ra pb ra ra ra ra ra ra ra ra ra ra pb pb pb pb ra pb ra pb pb ra ra ra ra pb pb pb pb ra pb pb pb pb pb ra ra pb pb ra ra ra ra pb pb ra ra pb pb ra pb ra pb pb pb pb ra ra ra ra ra ra pb pb pb pb ra pb ra pb pb ra pb ra pb ra pb ra pb pb ra pb pb ra ra pb pb pb ra ra ra pb ra ra ra pb ra pb ra ra ra pb ra ra ra ra pb pb ra ra ra ra pb pb pb pb ra ra pb pb ra pb ra ra pb ra pb pb pb ra pb pb ra ra pb ra pb pb ra pb pb ra pb ra pb pb ra ra ra pb ra pb ra ra ra pb ra pb pb ra ra ra ra pb ra pb pb pb pb pb ra pb ra pb ra ra pb pb ra ra pb pb pb pb pb pb pb ra pb ra ra pb ra ra ra ra pb ra pb ra pb pb pb pb ra ra pb pb ra ra ra ra pb pb ra ra pb pb ra pb ra ra pb pb ra pb ra ra ra pb pb pb pb ra ra ra pb ra ra pb pb ra pb ra ra ra pb pb pb ra pb ra pb pb ra ra ra pb ra ra pb pb ra ra pb pb pb pb ra pb pb ra pb pb pb ra pb ra pb ra pb ra pb pb ra ra ra ra pb ra ra ra ra ra pb pb ra ra ra ra pb pb pb pb pb ra ra ra pb ra pb ra ra pb ra pb pb ra pb pb pb ra ra ra ra pb ra pb pb ra ra pb ra pb pb ra pb ra ra ra pb ra ra pb pb ra pb ra pb ra pb rra pa pa pa sb pb sb pa pa pa rb pa rb rb pa rrb rrb rrb pa pa pa rb rb pa pa rb pa rb pa rb pa rrb rrb rrb rrb rrb pa rb pa pa rrb ss pb sa pa sa pb pb pb pb ra ra ra pb rra rra rra pb sa pa sb pa pa pa pa pa pa pa pa pa pa rb pa pa pa rb pa pa rb rb rb pa rb rb pa rb pa pa rrb rrb rrb rrb rrb rrb rrb rrb pa rb pa rb pa pa rb rb pa rrb rrb rrb rrb pa pa rb rb rb pa rrb rrb rrb pa sb pb sb pb sa pa sa pb pb pb pb ra pb rra pb sa pa sa pb pb pb ra ra pb ra ra pb pb pb ra pb rra rra pb ra pb rra pb rra rra rra sa pb sa pa sa pa pa pa rb rb rb pa pa rrb rrb rrb sb pa pa pa pa pa pa pa pa pa pa pa pa pa pa rb pa rb pa rb pa rb rb rb pa pa pa rb pa pa pa rb rb rb pa rb rb pa rb pa rb pa rb pa pa pa pa rb rb rb rb pa pa pa pa pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa rb rb rb rb rb pa rb pa rb pa rb pa pa rb rb rb pa pa pa pa pa rrb rrb rrb rrb rrb rrb rrb rrb pa pa rb pa rb rb pa pa rrb rrb rrb rrb rrb rrb pa rb rb pa rb pa rrb rrb rrb ss pb pb pb pb ra ra pb rra rra pb sa pa sa pb pb pb pb ra ra ra ra ra pb pb pb pb rra rra rra rra rra pb ra ra ra ra pb rra rra rra pb rra sa pb sa pa pa pa pa rb pa pa rrb sb pa sb pb sb pb pb pb pb pb pb pb pb ra pb pb pb ra pb ra ra pb ra pb ra pb ra ra ra ra pb pb pb rra rra rra rra rra rra rra rra rra pb ra ra ra ra ra pb pb pb pb rra rra rra rra rra pb pb ra ra pb pb rra rra rra pb sa pa pa pa sb pa pa pa pa pa sb pa pa pa pa pa pa rb rb pa pa pa rrb rrb sa pb pb pb ra ra ra pb rra rra rra sa pb sa pa sa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa rb rb rb pa pa pa pa rb pa rb pa pa rb rb pa rb pa pa pa pa rb pa pa rb rb rb pa rb rb rb rb pa pa rb rb pa rb rb pa pa rb pa rb pa pa pa rb rb pa pa rb pa rb rb pa rb pa rb rb rb pa pa rb pa pa rb rb pa rb rb rb pa rb rb pa rb pa rb pa pa rb rb pa pa pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa pa rb rb rb rb pa pa rb pa rb pa rb rb pa pa pa pa rb rb pa rb rb rb pa pa rb pa pa pa pa rb pa rb rb rb rb pa rb pa pa rb pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa pa pa rb pa pa rb pa pa rb pa rb rb rb pa pa pa rrb rrb rrb rrb rrb pa pa rb pa rb pa rb pa rrb rrb rrb rrb rrb rrb pa pa rb rb pa rrb rrb sb pa sb pb pb sa pa sa pb pb pb ra pb ra ra pb rra rra rra pb sa pa ss pb pb pb pb ra ra pb ra ra pb ra ra pb pb rra rra rra rra pb pb pb rra rra pb sa pa pa pa pa rb pa rb pa rrb rrb pa sb pb sa pb pb pb pb pb pb pb pb ra ra pb ra pb pb ra pb pb pb ra ra ra ra pb ra pb ra ra pb ra pb rra rra rra rra rra rra rra rra rra rra pb ra pb ra pb ra ra ra pb pb rra rra rra rra rra rra rra pb ra ra pb ra ra pb rra rra rra rra pa sb pb sb pa pa pa pa pa ss pa pa pa pa rb rb rb pa pa pa pa rrb pa rb pa rrb rrb rrb sb pa sb pb pb pb pb ra ra pb rra rra pb sa pa sa pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb ra pb pb pb ra ra ra ra ra ra pb pb ra ra pb ra ra ra pb pb ra ra pb pb pb ra ra ra ra ra ra pb pb pb pb pb pb pb rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra pb pb pb pb ra ra pb pb ra pb ra ra ra pb ra pb ra ra ra ra pb rra rra rra rra rra rra rra rra rra rra rra rra pb ra pb ra ra ra ra pb pb ra pb rra rra rra rra rra rra pb ra ra pb ra pb pb rra rra rra sa pb sa pa pa sb pa pa pa rb pa pa rrb sb pa sb pb sa pa pa pa pa pa rb rb pa rb pa rb rb pa rrb rrb rrb rrb rrb pa rb pa rrb sb pa sb pb pb pb ra ra pb ra pb rra rra rra sa pb sa pa sb pa pa pa pa pa pa pa pa rb rb pa pa rb pa rb rb pa rb rb rb rb pa rb rb pa pa pa pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa rb pa rb rb pa pa rb pa rrb rrb rrb rrb rrb pa rb pa rb pa rrb rrb pa sb pb pb pb pb pb ra ra pb rra rra pb sa pa ss pb pb pb pb ra ra ra pb ra pb ra ra pb rra rra rra pb pb rra rra rra pb pb sa pa sa pa sb pa pa rb pa pa rrb sa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa rb rb pa pa pa pa pa rb pa rb pa pa pa rb pa rb rb pa rb rb pa rb pa rb pa pa pa rb pa rb rb pa rb pa rb pa pa rb rb rb rb rb rb rb pa pa rb pa rb rb pa rb pa rb rb rb rb rb rb rb pa pa rb rb pa rb pa pa rb pa rb pa rb pa rb pa pa rb rb rb pa pa pa rb rb rb pa pa rb pa rb pa rb pa pa rb rb rb rb rb rb rb rb rb pa rb rb rb pa pa pa rb rb pa rb pa rb pa rb pa rb pa pa pa rb rb pa pa pa pa pa pa pa pa pa pa rb rb pa pa pa pa pa pa rb rb rb rb rb pa rb pa pa rb pa pa rb rb pa pa rb rb pa pa pa rb pa pa rb pa rb pa pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa rb pa rb rb pa rb pa pa rb rb pa rb rb pa rb rb rb pa pa pa rb rb rb rb rb pa rb pa pa rb pa pa pa pa pa pa pa pa rb pa pa rb pa pa pa rb pa rb rb rb pa pa pa rb rb pa pa pa rb rb pa rb rb pa pa rb rb pa rb rb pa pa pa rb rb rb pa rb rb pa pa rb rb pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa rb rb pa rb pa pa pa rb pa rb pa pa rb pa rb pa pa rb rb rb rb pa pa pa pa rb rb rb rb pa pa pa pa rb rb rb pa rb pa pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa pa pa pa rb rb rb rb rb rb pa rb pa pa pa pa rb pa rb rb pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa rb pa rb rb pa pa rb rb pa rrb rrb pa pa pa rrb rrb rrb sb pa sb pb sb pb sa pa sa pb pb pb ra pb ra pb rra rra pb sa pa ss pb pb pb pb pb ra ra ra ra pb pb ra ra pb rra rra rra rra pb pb ra pb rra rra rra sa pb sa pa sa pa sb pa pa rb pa rb pa rrb rrb pa sb pb sb pb pb pb pb pb pb pb pb ra ra pb ra pb ra ra pb ra pb ra ra ra pb ra pb ra pb pb pb pb rra rra rra rra rra rra rra rra pb ra ra pb pb ra pb ra pb rra rra rra rra rra rra pb ra pb ra pb pb rra rra rra sa pb sa pa pa pa sb pb sb pa pa pa rb rb rb pa pa rrb rrb rrb pa sb pb sb pa pa pa rb rb pa pa rb pa pa rb pa rrb rrb pa rb pa rrb rrb rrb pb pb ra pb ra ra pb rra rra rra pb sa pa sa pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb ra ra pb pb pb ra ra pb ra pb ra ra pb ra pb ra ra ra ra pb ra ra pb pb pb pb pb pb pb ra ra ra ra ra pb ra pb pb ra pb ra pb ra pb rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra pb pb pb pb ra ra pb pb ra ra ra ra ra pb ra pb ra pb ra pb pb rra rra rra rra rra rra rra pb pb pb ra ra pb ra pb rra rra rra rra rra rra pb ra ra pb pb pb rra rra rra sa pa sb pa pa pa rb pa rb pa rrb rrb sb pa sb pb sb pa pa pa rb rb rb pa rb pa rb pa pa rb pa rrb rrb rrb rrb pa pa pa rrb rrb sb pa sb pb pb sa pa sa pb pb pb pb ra pb rra sb pa pa pa pa pa pa pa pa rb rb pa pa pa rb rb pa rb pa pa rb rb pa pa rb rb rb rb pa pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa rb pa rb rb pa rb rb pa pa rrb rrb rrb rrb rrb pa rb pa pa rrb rrb sb pa sb pb pb pb pb pb pb ss pb pb pb pb ra pb ra ra pb ra ra pb rra rra rra pb pb ra pb rra rra rra sa pa sb pa pa pa rb rb pa rrb rrb sa pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb ra pb ra pb ra ra pb ra pb ra ra pb ra pb ra pb ra ra ra pb pb ra pb ra ra pb pb ra pb pb pb ra ra pb pb pb pb ra ra pb pb ra ra pb pb pb pb pb pb pb ra ra pb pb ra ra ra pb ra pb pb pb ra ra ra ra ra pb pb ra pb ra ra pb pb ra ra ra ra pb pb ra ra ra ra pb pb rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra pb pb pb ra pb ra ra pb pb pb ra pb pb pb pb ra ra ra ra ra ra ra pb pb ra pb pb ra ra ra ra pb pb pb ra pb ra pb ra pb rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra pb pb ra pb pb pb ra ra pb ra ra pb ra pb ra ra ra ra pb pb ra pb rra rra rra rra rra rra rra rra rra rra rra pb ra ra pb pb ra ra ra ra ra pb pb rra rra rra rra rra pb pb ra pb rra rra pb rra sa pb sa pa sa pa pa pa pa rb rb rb pa pa rrb rrb rrb sb pa pa pa pa rb pa pa pa rb pa rrb pa pa pa rrb pa sb pb sa pb sa pb pb ra pb pb rra pb sa pa pa pa pa pa pa pa pa pa pa pa rb rb rb pa pa rb rb rb rb pa rb pa pa pa pa pa rrb rrb rrb rrb rrb rrb rrb rrb pa pa rb pa rb rb rb pa rb pa rrb rrb rrb rrb rrb pa rb rb rb pa pa rrb rrb rrb pb pb pb ra pb ra pb rra rra sa pb sa pa sb pb pb pb ra ra ra ra ra pb pb ra pb pb rra rra rra rra pb pb rra rra pb sa pa pa pa rb rb pa pa rrb rrb sb pa pa pa pa pa pa pa pa pa pa pa pa pa rb rb pa rb pa pa rb rb pa pa rb pa pa rb rb rb pa rb rb rb rb pa pa rb pa rb rb rb pa pa rb rb pa rb pa pa pa rb rb pa pa pa pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa rb rb pa pa pa pa rb rb rb rb rb pa pa pa pa pa rb pa rrb rrb rrb rrb rrb rrb rrb rrb rrb pa rb rb rb pa pa rb pa rb pa rrb rrb rrb rrb pa pa rb pa rrb rrb rrb pb pb pb ra pb ra ra pb rra rra rra pb sa pa sa pb pb pb pb pb ra ra pb ra ra ra pb ra pb rra rra rra rra rra rra pb ra ra ra pb rra rra rra pb sa pa sb pa pa rb rb pa rb pa rrb rrb rrb sb pa sb pb sb pb pb pb pb pb pb pb pb ra pb pb pb pb pb ra pb pb ra pb ra ra ra pb ra ra ra pb rra rra rra rra rra rra rra rra pb pb ra pb ra pb ra ra pb rra rra rra rra rra pb pb ra ra ra pb rra rra rra pb sa pa sa pa sb pa pa pa rb rb pa rrb rrb sb pa sb pb sb pa pa pa pa rb rb pa rb rb pa pa pa rrb rrb rrb rrb pa rb pa rrb sa pb pb pb ra ra pb rra rra sa pb sa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa rb rb pa rb rb rb pa rb rb pa rb pa pa pa pa pa rb rb pa rb pa rb rb rb pa pa pa pa pa rb pa pa pa pa rb rb rb rb rb pa pa pa rb pa pa pa rb rb pa pa rb pa pa pa rb rb pa pa rb pa pa rb rb rb rb rb rb rb pa rb pa pa pa pa pa rb pa rb rb rb pa pa pa rb pa rb pa rb pa rb pa pa pa rb pa rb rb pa pa rb rb pa pa rb pa pa pa pa rb pa pa rb pa pa rb rb rb rb rb rb pa rb pa pa rb pa rb pa pa rb pa pa pa pa rb pa pa pa pa pa rb rb rb pa rb pa rb rb rb rb rb pa rb pa rb rb rb rb pa rb rb rb rb rb rb rb rb rb rb rb rb rb rb rb rb pa rb pa pa rb rb rb rb pa rb pa pa rb pa pa rb rb pa pa pa pa rb pa pa pa pa pa rb pa rb rb rb pa rb rb rb pa rb rb rb rb pa rb rb pa rb pa pa rb pa pa pa rb pa rb rb rb pa pa rb pa rb rb rb rb pa pa rb rb rb pa pa pa pa rb pa pa rb rb rb rb pa rb rb rb pa rb pa pa rb pa rb pa rb pa rb pa pa rb pa rb pa rb rb rb rb pa pa pa rb rb rb pa rb pa pa pa rb rb rb pa rb pa pa rb rb pa rb pa pa rb pa pa rb pa pa rb rb pa rb pa pa rb rb pa pa pa pa pa rb pa pa pa pa pa pa rb pa pa rb rb pa pa rb pa rb rb pa rb pa rb pa pa pa pa rb rb pa rb pa rb pa pa rb rb pa pa pa rb rb rb pa pa rb pa rb pa pa pa rb rb rb pa pa rb pa pa pa rb rb rb pa pa pa rb rb pa rb pa pa rb rb pa pa rb rb rb rb rb pa pa pa pa rb pa rb rb pa pa rb pa rb pa rb pa rb rb pa pa pa rb pa rb rb pa rb pa rb rb rb pa pa pa rb pa pa pa rb rb rb rb rb rb rb pa pa pa rb rb pa pa rb pa pa pa rb rb pa pa pa pa rb rb rb rb pa rb rb rb pa pa pa rb rb pa pa pa rb pa pa rb rb rb pa rb rb pa rb pa pa rb pa rb pa rb rb rb rb pa pa rb rb rb rb rb rb pa pa rb pa pa pa rb pa pa rb pa rb pa pa rb pa pa pa rb rb pa pa pa pa pa pa rb pa rb rb rb rb pa rb pa rb rb pa rb rb rb rb pa rb pa pa pa rb pa pa rb rb rb pa rb rb pa rb pa pa pa pa rb rb pa pa rb pa rb rb rb pa pa rb pa rb rb pa pa rb pa pa rb pa pa rb pa pa pa pa rb pa rb rb rb pa rb rb rb rb rb rb pa rb pa pa rb pa pa rb rb pa rb pa pa pa pa pa rb pa pa pa rb pa pa pa pa rb rb rb pa pa rb pa rb rb rb rb pa rb rb rb rb rb rb pa rb pa pa rb pa rb pa rb rb rb pa pa rb rb pa rb pa pa pa rb rb rb pa pa rb pa rb rb rb rb pa pa pa pa rrb pa rb pb sa pa sa pb pb pb pb pb sa pb sa pa ss pb pb pb pb ra ra ra ra ra pb pb pb pb rra rra rra rra rra pb ra ra pb rra pb rra sa pb sa pa sa pa sb pa pa pa pa pa sb pb sa pb pb pb pb pb pb pb pb ra ra ra pb ra pb pb pb ra ra ra ra pb pb ra ra pb ra ra pb pb pb rra rra rra rra rra rra rra rra rra rra rra rra pb pb pb ra ra ra ra ra pb pb rra rra rra rra rra pb ra pb ra ra pb rra pb rra rra pa pa sb pa pa rb pa rb pa rrb rrb pa sb pb sb pa pa pa pa pa rb rb rb pa pa rb pa rrb rrb rrb rrb pa pa sb pa sb pb sa pb pb ra ra ra pb pb rra rra rra sa pb sa pa ss pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb ra ra pb ra pb pb ra pb ra pb ra ra ra ra pb pb pb pb ra ra ra ra ra pb ra pb ra ra pb pb pb ra ra pb pb ra ra pb pb pb ra ra pb pb rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra pb pb ra pb pb ra ra pb ra pb pb ra pb ra ra ra pb pb ra pb rra rra rra rra rra rra rra rra rra pb ra pb ra ra pb ra pb ra ra ra pb rra rra rra rra rra rra pb ra ra ra pb pb rra rra pb rra rra sa pb sa pa pa pa pa pa rb rb pa pa rrb rrb sb pa sb pa pa rb rb pa pa rb pa pa pa rrb rrb rrb pa pa pa ss pb sa pb pb ra pb pb rra sa pb sa pa sa pa pa pa pa pa pa pa pa pa rb rb rb rb rb pa rb pa rb pa pa rb pa rb pa rb pa pa pa rrb rrb rrb rrb rrb rrb rrb pa rb rb rb pa pa pa pa rrb rrb rrb rrb rrb rrb pa pa rb rb pa rrb rrb sb pa sb pb ss pb pb pb ra ra ra pb pb rra rra rra pb sa pa sb pb pb pb pb ra ra pb ra pb ra ra pb rra rra rra rra pb pb pb rra sa pa pa pa rb pa rb pa rrb rrb ss pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb ra ra ra ra pb pb ra pb ra pb pb ra pb ra pb ra pb pb pb ra ra pb pb pb ra pb ra ra ra pb ra pb pb ra pb ra pb ra pb ra ra pb pb ra pb ra ra ra ra ra pb pb ra pb pb ra ra ra ra ra pb pb ra pb pb pb ra ra ra ra ra pb pb ra pb pb pb pb pb ra ra pb pb ra pb rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra pb ra ra pb pb ra pb ra ra pb pb ra ra ra ra ra ra ra pb ra pb pb ra pb ra ra ra pb pb ra pb pb ra ra ra pb pb pb pb ra ra pb pb pb rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra pb pb pb ra pb ra pb ra ra pb ra pb ra pb ra ra ra pb pb ra pb rra rra rra rra rra rra rra rra pb ra pb ra pb pb pb rra rra rra pb pb ra pb rra rra rra pb rra sa pa sb pa pa pa pa rb pa rrb ss pa pa pa rb rb rb pa rb pa rb pa rb pa pa rrb rrb rrb rrb rrb pa pa pa rrb pa sb pb sb pb pb pb ra ra ra pb pb rra rra rra sa pb sa pa sb pa pa pa pa pa pa pa pa rb pa rb pa rb rb rb rb pa rb pa pa rb pa pa pa pa rb rb rb pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa pa rb rb pa pa rb rb rb pa rrb rrb rrb rrb rrb pa rb rb rb pa pa rrb rrb rrb pa sb pb pb sa pb pb pb ra ra ra pb rra rra rra pb pb pb pb ra ra ra pb ra pb ra ra pb rra rra rra rra pb pb pb rra rra pb sa pa sa pa pa pa rb rb pa pa rrb rrb ss pa pa pa pa pa pa pa pa pa pa pa pa pa pa rb pa rb pa rb pa pa rb rb rb pa rb rb pa rb pa pa rb rb pa rb pa pa rb pa rb rb pa rb pa pa rb rb pa rb rb pa rb rb pa pa pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa pa rb rb pa rb pa pa pa rb pa rb rb pa rb pa rb pa rb pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa rb pa pa rb pa pa rrb rrb pa rb rb pa pa rrb rrb pa sb pb sb pb sa pb pb ra pb ra ra pb rra rra rra sa pb sa pa sa pb pb pb pb ra pb ra ra pb ra ra ra pb pb rra rra rra rra rra rra pb ra pb ra ra pb rra rra rra pb sa pa sa pa sb pa pa rb pa rb pa rrb rrb pa sb pb pb pb pb pb pb pb pb pb ra pb ra pb ra pb pb pb ra pb ra ra pb pb ra ra ra ra ra pb pb rra rra rra rra rra rra rra rra rra rra rra pb ra ra pb pb pb ra ra ra ra pb rra rra rra rra rra pb ra ra ra pb rra rra rra pb rra pa sb pa pa rb rb pa rb pa rrb rrb rrb sb pa sb pb ss pa pa pa pa rb pa pa rb rb pa pa rrb pa rb pa rrb rrb rrb ss pb pb ra ra pb ra pb rra rra rra pb sa pa sa pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb pb ra ra pb pb ra pb pb ra ra ra ra ra ra pb pb pb pb pb ra pb ra pb ra ra ra pb ra pb ra pb ra pb pb ra ra ra pb pb pb pb ra pb pb ra pb ra pb ra pb ra pb ra ra ra ra ra pb ra ra pb pb ra ra ra pb ra ra ra pb pb ra pb ra pb pb pb pb pb pb pb ra pb ra pb pb pb ra ra pb ra pb ra pb pb pb ra ra pb pb ra pb pb ra pb pb pb ra pb ra pb pb pb pb ra ra ra pb pb ra pb ra pb ra ra ra pb ra ra ra pb ra pb pb ra ra ra ra ra ra pb ra pb pb pb pb ra ra pb ra pb pb ra ra ra pb ra ra ra pb ra ra pb ra pb pb ra ra pb ra pb pb ra pb rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra pb pb pb ra pb pb pb pb pb pb pb ra ra pb pb pb ra ra pb ra ra pb pb ra ra ra ra pb pb ra pb ra pb ra pb pb pb pb ra pb pb pb ra ra ra ra pb ra ra ra ra ra pb pb pb ra pb pb ra pb ra pb ra pb pb ra pb pb pb ra ra ra ra ra ra ra ra ra ra ra pb pb pb rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra pb pb pb ra pb ra pb ra ra pb pb pb ra ra pb ra ra ra pb ra pb pb ra ra pb pb ra pb pb ra ra pb pb pb ra ra ra pb ra ra pb ra ra pb rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra pb pb ra pb pb pb ra pb pb pb pb ra pb ra ra ra pb rra rra rra rra rra rra rra rra rra pb ra pb ra ra pb pb ra ra pb rra rra rra pb ra ra pb pb rra rra rra rra pb sa pb sa pa sa pa sb pa sb pa pa pa pa sb pa sb pb ss pa pa pa pa pa pa pa rb rb rb rb pa rrb rrb rrb rrb pa pa rb rb pa rrb rrb sb pb sa pa sa pb pb pb ra pb ra ra pb rra rra rra pb sa pa sb pa pa pa pa pa pa pa pa rb pa rb pa rb rb rb rb pa rb pa pa pa pa rb rb rb pa rb pa pa pa rrb rrb rrb rrb rrb rrb rrb rrb rrb pa rb rb pa rb pa rb pa pa rrb rrb rrb rrb rrb pa pa rb pa rrb rrb pa sb pb sa pb sa pb pb pb pb pb pb pb ra pb pb ra ra ra ra pb ra pb pb rra rra rra rra rra rra pb ra ra pb rra rra pb sa pb sa pa pa pa pa pa pa pa sb pa pa pa pa pa pa pa pa pa pa pa pa pa pa rb pa pa rb pa rb rb pa rb rb pa rb pa pa rb rb rb pa rb pa rb rb rb pa rb rb pa pa pa rb pa rb rb pa rb rb pa pa pa rb pa pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa pa rb rb pa pa rb pa rb rb rb pa pa pa rb rb pa pa rb rb rb pa rrb rrb rrb rrb rrb rrb rrb rrb pa pa pa pa rb rb rb pa rrb rrb rrb rrb rrb rrb pa pa pa sb pa sb pb ss pb pb pb ra pb ra ra pb rra rra rra pb pb pb pb pb pb ra ra pb pb rra rra pb ra ra ra pb rra rra pb rra pb sa pa sa pa sb pa pa pa rb rb rb pa rrb rrb rrb sb pb pb pb pb pb pb pb pb pb ra pb pb pb ra pb pb pb pb ra ra ra ra ra ra ra pb ra pb rra rra rra rra rra rra rra rra rra rra pb pb ra pb ra ra pb ra ra pb rra rra rra rra pb ra ra pb rra rra pb rra sa pb sa pa pa sb pa pa rb rb pa pa rrb rrb sa pa pa pa rb rb rb pa pa pa rb rb pa pa rrb rrb rrb rrb pa pa rrb sb pa sb pb ss pb pb ra ra pb pb rra rra pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa rb pa rb pa rb pa pa pa pa pa pa pa rb rb rb pa rb pa rb rb pa rb pa rb pa rb rb pa pa pa rb rb rb pa rb pa pa pa pa rb pa pa pa pa pa pa rb rb pa rb pa rb pa rb rb rb pa pa rb rb pa rb pa rb pa rb rb rb rb rb rb pa rb pa pa pa rb rb rb rb pa pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa rb pa rb pa pa rb rb rb pa rb rb pa pa pa pa pa rb pa pa rb rb pa rb pa pa rb rb pa rb rb pa rb rb pa rb rb pa rb rb pa rb pa rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb rrb pa rb pa rb rb pa rb pa pa rb rb pa pa pa rb rb pa rb rb pa pa rrb rrb rrb rrb rrb rrb rrb rrb rrb pa pa rb pa rb pa rb rb rb pa rrb rrb rrb rrb pa pa pa rrb rrb sb pb pb pb ra pb pb rra sa pb sa pa ss pb pb pb pb ra ra pb ra pb ra pb pb rra rra rra pb ra ra ra pb rra rra rra pb rra pb sa pa pa pa pa rb pa rb pa rrb rrb sb pa sb pb sa pb pb pb pb pb pb pb pb pb pb pb pb pb ra ra ra pb ra ra ra pb ra pb ra ra pb pb rra rra rra rra rra rra rra pb ra ra pb ra pb ra pb pb rra rra rra rra rra pb ra ra ra pb rra pb rra rra rra sa pb sa pa sa pa pa pa pa pa pa pa pa pa rb pa pa pa rb pa rrb rrb pa rb pa rrb pa sb pb sa pb pb pb ra ra pb rra rra pb sa pb pb pb pb pb pb pb pb pb pb pb pb pb pb ra ra pb ra ra pb ra ra pb ra pb pb pb ra ra pb pb pb pb pb ra ra ra pb ra pb ra ra pb pb pb ra pb ra ra ra ra ra pb pb ra pb rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra rra pb pb pb ra pb ra pb pb pb ra ra pb pb ra ra ra pb rra rra rra rra rra rra rra rra pb ra ra pb ra pb ra ra ra pb pb rra rra rra rra rra rra rra pb ra pb pb rra pb pb sa pa sa pa sb pa pa pa pa rb rb rb pa rrb rrb rrb pa sb pb sb pa pa pa pa rb pa rb rb rb pa pa pa rrb rrb rrb rrb pa rb rb pa rrb rrb pb pb ra ra pb pb rra rra sa pb sa pa ss pa pa pa pa pa pa pa rb rb pa rb pa rb rb pa pa rb pa rb pa rb rb pa rb pa pa pa rrb rrb rrb rrb rrb rrb rrb rrb rrb pa pa rb rb rb pa pa rb pa rrb rrb pa pa pa rrb rrb rrb sb pa sb pb pb sa pb pb pb ra ra pb rra rra pb sa pa ss pb pb pb ra ra ra ra ra ra pb pb pb pb rra rra rra rra pb pb pb rra rra pa sb pa pa rb rb pa pa rrb rrb pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa pa">
+        <label>Sorting Steps</label>
+      </div>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary">▷ Play Steps</button>
+    </div>
+    <div class="col-auto text-center">
+      <input class="form-range" type="range" min="1" max="1001" value="1" step="1" title="Delay: short/long" oninput="this.nextElementSibling.value=respeed(this.value)"><output>Speed: 1ms</output>
+    </div>
+    <div class="col-auto text-center">
+      <input class="form-range" id="ih" type="range" min="0" max="50" value="0" title="Size: Small/Big" oninput="this.nextElementSibling.value=resize(this.value)"><output>Size: auto</output>
+    </div>
+    <div class="col-auto">
+      <button type="button" onclick="savedata()" class="btn btn-secondary btn-sm">Create Your Link</button>
+      <br>
+      <a href="https://md.picasoft.net/ygePDdPSR4KN1PzJ50KHaw?both" target="ps">Share your link here</a>
+
+    </div>
+  </form>
+  <span id="cnt"></span> <span id="stats"></span><br>
+  <div class="col">
+    <ol id="stack1"></ol>
+  </div>
+  <div class="col">
+    <ol id="stack2"></ol>
+  </div>
+</div>
+  <script src="./lz-string.min.js"></script>
+<script src="./bootstrap.bundle.min.js"></script>
+<script src="./jquery.min.js"></script>
+<script src="./bootbox.min.js"></script>
+      <script id="rendered-js">
+const A = window.stack1;
+const B = window.stack2;
+const NUMS = window.a;
+const STEPS = window.b;
+
+function add(i) {
+  const li = document.createElement("li");
+  li.style.width = i.toString() + "%";
+  pushe(A, li);
+}
+
+function pop(o) {
+  const el = o.firstChild;
+  o.removeChild(el);
+  return el;
+}
+
+function pope(o) {
+  const el = o.lastChild;
+  o.removeChild(el);
+  return el;
+}
+
+const push = (o, el) => o.insertBefore(el, o.firstChild);
+const pushe = (o, el) => o.appendChild(el);
+
+function do_cmd(str) {
+  let a, b;
+  switch (str) {
+    case "sa":
+      a = pop(A);
+      b = pop(A);
+      push(A, a);
+      push(A, b);
+      break;
+    case "sb":
+      a = pop(B);
+      b = pop(B);
+      push(B, a);
+      push(B, b);
+      break;
+    case "ss":
+      do_cmd("sa");
+      do_cmd("sb");
+      break;
+    case "pa":
+      push(A, pop(B));
+      break;
+    case "pb":
+      push(B, pop(A));
+      break;
+    case "ra":
+      pushe(A, pop(A));
+      break;
+    case "rb":
+      pushe(B, pop(B));
+      break;
+    case "rr":
+      do_cmd("ra");
+      do_cmd("rb");
+      break;
+    case "rra":
+      push(A, pope(A));
+      break;
+    case "rrb":
+      push(B, pope(B));
+      break;
+    case "rrr":
+      do_cmd("rra");
+      do_cmd("rrb");
+      break;}
+
+}
+
+let _cmds = null;
+let _cmd_idx = 0;
+let _cmd_tm = 0;
+let _cmd_ms = 1;
+function run_cmd(ar, ms) {
+  if (ar) {
+    clearTimeout(_cmd_tm);
+    _cmd_tm = _cmd_idx = 0;
+    _cmds = ar;
+    _cmd_ms = ms;
+  }
+  if (_cmd_idx < _cmds.length) {
+    if (!ar) {
+      do_cmd(_cmds[_cmd_idx++]);
+      window.cnt.innerText = `${_cmd_idx} ${(
+      _cmd_idx * 100 /
+      _cmds.length).
+      toFixed(2)}% |`;
+    }
+    _cmd_tm = setTimeout(run_cmd, _cmd_ms);
+  }
+}
+
+document.forms[0].addEventListener("submit", e => {
+  e.preventDefault();
+  clearTimeout(_cmd_tm);
+  A.innerHTML = B.innerHTML = "";
+  const ms = e.target.elements[3].value;
+  const nums = e.target.elements[0].value.trim().split(/\s+/);
+  nums.forEach((v, i) => nums[i] = parseInt(v));
+  const min = Math.min(...nums);
+  const max = Math.max(...nums);
+  nums.forEach((v, i) => add((1.0 + v - min) * 50 / max));
+  if (ih.value == 0) resize(0);
+  const steps = e.target.elements[1].value.trim().split(/\s+/);
+  const stats = steps.reduce((p, c) => {
+    if (!p[c]) p[c] = 0;
+    p[c]++;
+    return p;
+  }, {});
+  window.stats.innerText =
+  `${steps.length} steps for ${
+  document.querySelectorAll("li").length
+  } numbers. ` + JSON.stringify(stats).replace(/"/g, "");
+  run_cmd(steps, ms);
+});
+
+function resize(i) {
+  let s = i + "px";
+  if (i < 1) {
+    s = "auto";
+    const nums = A.children.length + B.children.length;
+    i = Math.max(
+    1,
+    parseInt(
+    (window.innerHeight * 0.8 - 20 - document.body.clientHeight - nums) /
+    nums));
+
+
+  }
+  document.documentElement.style.setProperty("--height", i + "px");
+  document.documentElement.style.setProperty("--gap", i == 1 ? "0px" : "1px");
+  return "Size: " + s;
+}
+
+function respeed(ms) {
+  _cmd_ms = ms;
+  clearTimeout(_cmd_tm);
+  _cmd_tm = setTimeout(run_cmd, _cmd_ms);
+  return "Speed: " + ms + "ms";
+}
+
+async function savedata() {
+  const S = {
+    pa: "1",
+    pb: "2",
+    sa: "3",
+    sb: "4",
+    ss: "0",
+    ra: "5",
+    rb: "6",
+    rr: "9",
+    rra: "7",
+    rrb: "8",
+    rrr: "-" };
+
+  let s = "";
+  const steps = STEPS.value.trim().split(/\s+/);
+  steps.forEach((v, i) => s += S[v]);
+  s =
+  "https://codepen.io/ahkoh/full/bGWxmVz?" +
+  LZString.compressToEncodedURIComponent(NUMS.value.trim() + " " + s);
+  const title = `My push_swap link (${s.length} chr) with ${
+  NUMS.value.trim().split(/\s+/).length
+  } nums & ${steps.length} steps`;
+  try {
+    await navigator.clipboard.writeText(s);
+    bootbox.alert({
+      message: `${title}<br/><a href="${s}" target="_blank">https://codepen.io/ahkoh/full/bGWxmVz?...</a><br/>Above link is copied to the clipboard`,
+      backdrop: true });
+
+  } catch {
+    bootbox.alert({
+      message: `${title}<br/><a href="${s}" target="_blank">https://codepen.io/ahkoh/full/bGWxmVz?...<br/>(Right-click to copy link address here)</a>`,
+      backdrop: true });
+
+  }
+  //long url limit by browser, try prompt, then share-ui, then clipboard.
+  /*
+  if (s.length > 2000)
+    navigator.share({ url: s, title }).catch((ex) =>
+      navigator.clipboard
+        .writeText(s)
+        .then(() => alert(title + " is copied to the clipboard."))
+        .catch((ex) => 'Failed to copy link to the clipboard')
+    );
+  else prompt(title, s); //default answer limit 2000ch
+  */
+  //https://shrib.com/?v=md#Brendan4xZkj9P
+}
+
+function loaddata(lz) {
+  const S = {
+    1: "pa ",
+    2: "pb ",
+    3: "sa ",
+    4: "sb ",
+    0: "ss ",
+    5: "ra ",
+    6: "rb ",
+    9: "rr ",
+    7: "rra ",
+    8: "rrb ",
+    "-": "rrr " };
+
+  const str = LZString.decompressFromEncodedURIComponent(lz);
+  if (!str) {
+    alert("Failed to process query string.");
+    return;
+  }
+  const p = str.lastIndexOf(" ");
+  NUMS.value = str.substring(0, p).trim();
+  STEPS.value = "";
+  const s = str.substring(p).trim();
+  const len = s.length;
+  for (let i = 0; i < len; i++) {if (window.CP.shouldStopExecution(0)) break;STEPS.value += S[s[i]] || "";}window.CP.exitedLoop(0);
+}
+
+if (
+window.location.search &&
+window.location.search.length > 55 &&
+window.location.href.indexOf("/full") > 0)
+{
+  loaddata(window.location.search.substring(1));
+}
+//# sourceURL=pen.js
+    </script>
+
+  
+
+
+
+</body></html>
